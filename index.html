@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" />
+    <title>Tanishq Saxena Portfolio</title>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        /* Navigation Styles */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo span {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .link a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .link a:hover {
+            color: #667eea;
+        }
+
+        .contact-btn {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+        }
+
+        .contact-btn a {
+            color: white !important;
+        }
+
+        .hamburg {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .dropdown {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background: white;
+            transform: translateY(-500px);
+            transition: transform 0.3s ease;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .dropdown .links {
+            flex-direction: column;
+            padding: 2rem;
+            gap: 1rem;
+        }
+
+        .cancel {
+            position: absolute;
+            top: 1rem;
+            right: 2rem;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Section Styles */
+        section {
+            min-height: 100vh;
+            padding: 100px 0 50px;
+            display: flex;
+            align-items: center;
+        }
+
+        .main-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            width: 100%;
+        }
+
+        /* Home Section */
+        #home .main-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .image img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 50%;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+        }
+
+        .content h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .content h1 span {
+            color: #ffd700;
+        }
+
+        .typewriter {
+            font-size: 1.5rem;
+            color: #fff;
+            margin-bottom: 2rem;
+        }
+
+        .typewriter span {
+            color: #ffd700;
+            font-weight: bold;
+        }
+
+        .content p {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: #ffd700;
+            color: #333;
+            transform: translateY(-5px);
+        }
+
+        .btn button {
+            background: linear-gradient(135deg, #ffd700, #ffed4e);
+            color: #333;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 25px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .btn button:hover {
+            transform: translateY(-3px);
+        }
+
+        /* Other Sections */
+        #about, #skills, #projects, #certifications, #resume, #contact {
+            background: white;
+            margin: 2rem 0;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #333;
+            text-align: center;
+            position: relative;
+        }
+
+        .content h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 2px;
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .skill-category {
+            background: linear-gradient(135deg, #f8f9ff, #e6efff);
+            padding: 2rem;
+            border-radius: 15px;
+            border-left: 5px solid #667eea;
+        }
+
+        .skill-category h3 {
+            color: #667eea;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .skill-category p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .project-card {
+            background: linear-gradient(135deg, #fff, #f8f9ff);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-card h3 {
+            color: #667eea;
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+
+        .project-card ul {
+            list-style: none;
+        }
+
+        .project-card li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+            color: #666;
+        }
+
+        .project-card li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        /* Certifications Section */
+        .cert-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .cert-item {
+            background: linear-gradient(135deg, #f0f4ff, #e6f0ff);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .cert-icon {
+            font-size: 2rem;
+            color: #667eea;
+        }
+
+        .cert-text {
+            color: #666;
+            font-weight: 500;
+        }
+
+        /* Education Section */
+        .education-timeline {
+            margin-top: 3rem;
+        }
+
+        .education-item {
+            background: linear-gradient(135deg, #fff, #f8f9ff);
+            margin-bottom: 2rem;
+            padding: 2rem;
+            border-radius: 15px;
+            border-left: 5px solid #667eea;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .education-item h3 {
+            color: #667eea;
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+
+        .education-item .institution {
+            color: #888;
+            margin-bottom: 0.5rem;
+            font-style: italic;
+        }
+
+        .education-item .year {
+            color: #666;
+            font-weight: 500;
+        }
+
+        /* Contact Section */
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .contact-item {
+            background: linear-gradient(135deg, #f8f9ff, #e6efff);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .contact-item i {
+            font-size: 2rem;
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+
+        .contact-item h3 {
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-item p, .contact-item a {
+            color: #666;
+            text-decoration: none;
+        }
+
+        .contact-item a:hover {
+            color: #667eea;
+        }
+
+        /* Resume Download Section */
+        .resume-download {
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .resume-download button {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 1rem 3rem;
+            border-radius: 25px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .resume-download button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+        }
+
+        /* Professional Summary */
+        .professional-summary {
+            background: linear-gradient(135deg, #f8f9ff, #e6efff);
+            padding: 2rem;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            border-left: 5px solid #667eea;
+        }
+
+        .professional-summary p {
+            color: #666;
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+
+        /* Additional Experience */
+        .additional-experience {
+            margin-top: 3rem;
+        }
+
+        .experience-item {
+            background: linear-gradient(135deg, #fff, #f8f9ff);
+            padding: 2rem;
+            border-radius: 15px;
+            border-left: 5px solid #ffd700;
+            margin-bottom: 1.5rem;
+        }
+
+        .experience-item h3 {
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+
+        .experience-item p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .links {
+                display: none;
+            }
+
+            .hamburg {
+                display: block;
+            }
+
+            #home .main-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .content h1 {
+                font-size: 2rem;
+            }
+
+            .typewriter {
+                font-size: 1.2rem;
+            }
+
+            .skills-grid,
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="logo" data-aos="zoom-in" data-aos-duration="1000">
+                <span>Tanishq Saxena</span>
+            </div>
+            <div class="links">
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100"><a href="#home">Home</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200"><a href="#about">About</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300"><a href="#skills">Skills</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400"><a href="#projects">Projects</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500"><a href="#education">Education</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600"><a href="#certifications">Certifications</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="700"><a href="#resume">Resume</a></div>
+                <div class="link contact-btn" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="800"><a href="#contact">Contact</a></div>
+            </div>
+            <i class="fa-solid fa-bars hamburg" onclick="hamburg()" aria-label="Open navigation menu" role="button" tabindex="0"></i>
+        </div>
+        <div class="dropdown">
+            <div class="links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#education">Education</a>
+                <a href="#certifications">Certifications</a>
+                <a href="#resume">Resume</a>
+                <a href="#contact">Contact</a>
+                <i class="fa-solid fa-xmark cancel" onclick="cancel()" aria-label="Close navigation menu" role="button" tabindex="0"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home">
+        <div class="main-container">
+            <div class="image" data-aos="zoom-in-right" data-aos-duration="2500">
+                <img src="assets/main.png" alt="Portrait of Tanishq Saxena" />
+            </div>
+            <div class="content">
+                <h1 data-aos="fade-left" data-aos-duration="1000" data-aos-delay="800">
+                    Hey I'm <span>Tanishq</span>
+                </h1>
+                <div class="typewriter" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="900">
+                    I'm a <span>Developer | Data Scientist</span>
+                </div>
+                <p data-aos="flip-up" data-aos-duration="1000" data-aos-delay="1000">
+                    I am Tanishq Saxena, a passionate Software Developer and Data Science enthusiast, dedicated to solving real-world problems with the help of technology. Currently pursuing a B.Tech in Computer Science and Engineering (Specializing in Data Science) at Jaypee University of Engineering and Technology, I am deeply interested in Machine Learning and Data Analytics.
+                </p>
+                <div class="social-links" data-aos="flip-down" data-aos-duration="1000" data-aos-delay="1200">
+                    <a href="https://github.com/tanishq234" target="_blank"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/tanishq-saxena-6b16ab252" target="_blank"></a><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://leetcode.com/u/Tanishq45" target="_blank"><i class="fa-solid fa-code"></i></a>
+                </div>
+                <div class="btn" data-aos="zoom-out-left" data-aos-duration="1000" data-aos-delay="1300">
+                    <a href="resume%20.pdf" download>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" data-aos="fade-up" data-aos-duration="1000">
+        <div class="main-container">
+            <div class="content">
+                <h2>About Me</h2>
+                <div class="professional-summary">
+                    <p>Analytical and results-driven Computer Science undergraduate with hands-on experience in machine learning, data analysis, and fullstack development. Proven ability to develop scalable AI models and user-centric dashboards. Solved 100+ DSA problems on LeetCode, demonstrating robust problem-solving skills. Adept in Python, C++, SQL, and data visualization. Eager to drive innovation through impactful technology solutions.</p>
+                </div>
+                <p>I enjoy solving complex problems using technology and data. With experience in Python, C++, and machine learning frameworks, I build solutions that are both scalable and user-friendly. My passion lies in transforming raw data into meaningful insights and creating intelligent systems that can make a real difference in people's lives.</p>
+            </div>
+        </div>
+    </section>
+
+   <!-- Experience Section -->
+    <section id="experience" data-aos="fade-up" data-aos-duration="1000">
+        <div class="main-container">
+            <div class="content">
+            <h2 class="text-3xl font-bold text-white text-center mb-10">Experience</h2>
+            <div class="experience-list space-y-8">
+                <div class="bg-gray-800 p-6 rounded-xl shadow-xl border-l-4 border-primary" data-aos="fade-right" data-aos-duration="1000">
+                <h3 class="text-2xl text-accent font-semibold mb-2">Python Development Intern – Octanet</h3>
+                <p class="text-gray-400 mb-2">May 1, 2025 – July 1, 2025 <span class="italic">(Remote)</span></p>
+                <p class="text-gray-300 leading-relaxed">Developed automation tools and reusable Python modules. Gained experience in agile methodology and Git-based collaboration on remote projects.</p>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-xl shadow-xl border-l-4 border-secondary" data-aos="fade-left" data-aos-duration="1000">
+                <h3 class="text-2xl text-accent font-semibold mb-2">SSOC Contributor – Smart Summer of Code</h3>
+                <p class="text-gray-400 mb-2">December 2022</p>
+                <p class="text-gray-300 leading-relaxed">Contributed to real-world open-source projects under SSOC. Improved problem-solving and collaboration skills through hands-on development experience.</p>
+                </div>
+            </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Skills Section -->
+    <section id="skills" data-aos="fade-up" data-aos-duration="1000">
+        <div class="main-container">
+            <div class="content">
+                <h2>Technical Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3><i class="fa-solid fa-code"></i> Programming Languages</h3>
+                        <p>Python, C++, SQL,C,Java</p>
+                    </div>
+                    <div class="skill-category">
+                        <h3><i class="fa-solid fa-cogs"></i> Frameworks & Tools</h3>
+                        <p>TensorFlow, Keras, Flask, Streamlit, Power BI, Git, MySQL,PyTorch,Pygame,HTML,CSS</p>
+                    </div>
+                    <div class="skill-category">
+                        <h3><i class="fa-solid fa-book"></i> Libraries</h3>
+                        <p>NumPy, Pandas, Matplotlib, Seaborn, Plotly</p>
+                    </div>
+                    <div class="skill-category">
+                        <h3><i class="fa-solid fa-brain"></i> Core Concepts</h3>
+                        <p>Data Structures & Algorithms, Object-Oriented Programming, Machine Learning, Deep Learning,NLP, Operating Systems, Data Analysis</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" data-aos="fade-up" data-aos-duration="1000">
+    <div class="main-container">
+        <div class="content">
+            <h2>Project Experience</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>
+                        <i class="fa-solid fa-chart-line"></i>
+                        <a href="https://github.com/tanishq234/Stock-Price-Prediction" target="_blank" rel="noopener noreferrer" style="color:inherit; text-decoration:none;">
+                            Stock Price Prediction
+                        </a>
+                    </h3>
+                    <ul>
+                        <li>Engineered LSTM and XGBoost models to forecast stock trends with 92% accuracy</li>
+                        <li>Developed a Streamlit dashboard for interactive user input and dynamic visualization</li>
+                        <li>Implemented advanced feature engineering and time series analysis techniques</li>
+                    </ul>
+                </div>
+                <div class="project-card">
+                    <h3>
+                        <i class="fa-solid fa-bug"></i>
+                        <a href="https://github.com/tanishq234/gdp-dashboard" target="_blank" rel="noopener noreferrer" style="color:inherit; text-decoration:none;">
+                            GDB Debugging Dashboard
+                        </a>
+                    </h3>
+                    <ul>
+                        <li>Built an intuitive dashboard using Matplotlib and Plotly to visualize debugging steps</li>
+                        <li>Reduced developers' troubleshooting time by 30% through improved data insights</li>
+                        <li>Created comprehensive debugging workflow visualization tools</li>
+                    </ul>
+                </div>
+                <div class="project-card">
+                    <h3>
+                        <i class="fa-solid fa-car"></i>
+                        <a href="https://github.com/tanishq234/SELF_DRIVING_CAR" target="_blank" rel="noopener noreferrer" style="color:inherit; text-decoration:none;">
+                            Self-Driving Car Simulator
+                        </a>
+                    </h3>
+                    <ul>
+                        <li>Programmed an agent with Deep Q-Learning using OpenAI Gym and fine-tuned reward mechanics</li>
+                        <li>Boosted model accuracy and performance in virtual driving simulations</li>
+                        <li>Implemented reinforcement learning algorithms for autonomous navigation</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Education Section -->
+    <section id="education" data-aos="fade-up" data-aos-duration="1000">
+        <div class="main-container">
+            <div class="content">
+                <h2>Education</h2>
+                <div class="education-timeline">
+                    <div class="education-item">
+                        <h3>B.Tech - Computer Science and Engineering</h3>
+                        <p class="institution">Jaypee University of Engineering and Technology, Guna</p>
+                        <p class="year">2022 - Present</p>
+                        <p>Specializing in Data Science with focus on Machine Learning and AI technologies</p>
+                    </div>
+                    <div class="education-item">
+                        <h3>Class XII</h3>
+                        <p class="institution">Ramakrishna Mission School, Gwalior</p>
+                        <p class="year">2022</p>
+                    </div>
+                    <div class="education-item">
+                        <h3>Class X - CBSE</h3>
+                        <p class="institution">The Woodstock School, Gwalior</p>
+                        <p class="year">2020</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" data-aos="fade-up" data-aos-duration="1000">
+        <div class="main-container">
+            <div class="content">
+                <h2>Certifications & Achievements</h2>
+                <div class="cert-list">
+                    <div class="cert-item">
+                        <div class="cert-icon">🏆</div>
+                        <div class="cert-text">Smart India Hackathon 2023 - Software Edition Participant</div>
+                    </div>
+                    <div class="cert-item">
+                        <div class="cert-icon">🐍</div>
+                        <div class="cert-text">100 Days of Code: Python Bootcamp, Udemy (2025)</div>
+                    </div>
+                    <div class="cert-item">
+                        <div class="cert-icon">📊</div>
+                        <div class="cert-text">DSA in Python, Infosys Springboard (2023)</div>
+                    </div>
+                </div>
+
+                <div class="additional-experience">
+                    <h3>Additional Experience</h3>
+                    <div class="experience-item">
+                        <h3><i class="fa-solid fa-code"></i> LeetCode Problem Solving</h3>
+                        <p>Solved 100+ problems covering arrays, trees, graphs, dynamic programming, and backtracking. Demonstrates strong algorithmic thinking and problem-solving capabilities.</p>
+                    </div>
+                    <div class="experience-item">
+                        <h3><i class="fa-solid fa-users"></i> Extracurricular Activities</h3>
+                        <p>Avid sports enthusiast participating in Cricket, Football, and Badminton. Developed leadership, discipline, and collaboration skills through competitive sports participation.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   <!-- Resume Section -->
+<section id="resume" data-aos="fade-up" data-aos-duration="1000">
+  <div class="main-container">
+    <div class="content">
+      <h2>Resume</h2>
+      <p>You can view or download my resume below:</p>
+      <div class="resume-download">
+        <a href="resume.pdf" target="_blank">
+          <button>View Resume</button>
+        </a>
+        &nbsp;
+        <a href="resume.pdf" download>
+          <button>Download CV</button>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+    <!-- Contact Section -->
+    <section id="contact" data-aos="fade-up" data-aos-duration="1000">
+        <div class="main-container">
+            <div class="content">
+                <h2>Contact Me</h2>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fa-solid fa-envelope"></i>
+                        <h3>Email</h3>
+                        <p><a href="mailto:tanishq.saxena26@gmail.com">tanishq.saxena26@gmail.com</a></p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fa-solid fa-phone"></i>
+                        <h3>Phone</h3>
+                        <p>+91 6264616658</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <h3>Location</h3>
+                        <p>Gwalior, Madhya Pradesh, India</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fa-brands fa-linkedin"></i>
+                        <h3>LinkedIn</h3>
+                        <p><a href="https://www.linkedin.com/in/tanishq-saxena-6b16ab252" target="_blank">linkedin.com/in/tanishq-saxena-6b16ab252</a></p>
+
+                    </div>
+                    <div class="contact-item">
+                        <i class="fa-brands fa-github"></i>
+                        <h3>GitHub</h3>
+                        <p><a href="https://github.com/tanishq234" target="_blank">github.com/tanishq234</a></p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fa-solid fa-code"></i>
+                        <h3>LeetCode</h3>
+                        <p><a href="https://leetcode.com/u/Tanishq45" target="_blank">leetcode.com/u/Tanishq45</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({ offset: 0 });
+        
+        function hamburg() {
+            document.querySelector(".dropdown").style.transform = "translateY(0px)";
+        }
+        
+        function cancel() {
+            document.querySelector(".dropdown").style.transform = "translateY(-500px)";
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+                // Close mobile menu if open
+                document.querySelector(".dropdown").style.transform = "translateY(-500px)";
+            });
+        });
+    </script>
+</body>
+</html>
