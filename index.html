@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" />
+    <title>Tanishq Saxena Portfolio</title>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="style.css" /> <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script> </head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="logo" data-aos="zoom-in" data-aos-duration="1000">
+                <span>Tanishq Saxena</span>
+            </div>
+            <div class="links">
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100"><a href="#home">Home</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200"><a href="#about">About</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300"><a href="#skills">Skills</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400"><a href="#projects">Projects</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500"><a href="#education">Education</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600"><a href="#certifications">Certifications</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="700"><a href="#resume">Resume</a></div>
+                <div class="link contact-btn" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="800"><a href="#contact">Contact</a></div>
+            </div>
+            <i class="fa-solid fa-bars hamburg" onclick="hamburg()" aria-label="Open navigation menu" role="button" tabindex="0"></i>
+        </div>
+        <div class="dropdown">
+            <div class="links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#education">Education</a>
+                <a href="#certifications">Certifications</a>
+                <a href="#resume">Resume</a>
+                <a href="#contact">Contact</a>
+                <i class="fa-solid fa-xmark cancel" onclick="cancel()" aria-label="Close navigation menu" role="button" tabindex="0"></i>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home">
+        <div class="main-container">
+            <div class="image" data-aos="zoom-in-right" data-aos-duration="2500">
+                <img src="main.png" alt="Portrait of Tanishq Saxena" /> </div>
+            <div class="content">
+                <h1 data-aos="fade-left" data-aos-duration="1000" data-aos-delay="800">
+                    Hey I'm <span>Tanishq</span>
+                </h1>
+                <div class="typewriter" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="900">
+                    I'm a <span class="typed-text"></span> </div>
+                <p data-aos="flip-up" data-aos-duration="1000" data-aos-delay="1000">
+                    I am Tanishq Saxena, a passionate Software Developer and Data Science enthusiast, dedicated to solving real-world problems with the help of technology. Currently pursuing a B.Tech in Computer Science and Engineering (Specializing in Data Science) at Jaypee University of Engineering and Technology, I am deeply interested in Machine Learning and Data Analytics.
+                </p>
+                <div class="social-links" data-aos="flip-down" data-aos-duration="1000" data-aos-delay="1200">
+                    <a href="https://github.com/tanishq234" target="_blank"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/tanishq-saxena-6b16ab252" target="_blank"><i class="fa-brands fa-linkedin"></i></a> <a href="https://leetcode.com/u/Tanishq45" target="_blank"><i class="fa-solid fa-code"></i></a>
+                </div>
+                <div class="btn" data-aos="zoom-out-left" data-aos-duration="1000" data-aos-delay="1300">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" data-aos="fade-up" data-aos-duration="1000">
+        <div class="main-container">
+            <div class="content">
+                <h2>About Me</h2>
+                <div class="professional-summary">
+                    <p>Analytical and results-driven Computer Science undergraduate with hands-on experience in machine learning, data analysis, and fullstack development. Proven ability to develop scalable AI models and user-centric dashboards. Solved 100+ DSA problems on LeetCode, demonstrating robust problem-solving skills. Adept in Python, C++, SQL, and data visualization. Eager to drive innovation through impactful technology solutions.</p>
+                </div>
+                <p>I enjoy solving complex problems using technology and data. With experience in Python, C++, and machine learning frameworks, I build solutions that are both scalable and user-friendly. My passion lies in transforming raw data into meaningful insights and creating intelligent systems that can make a real difference in people's lives.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" data-aos="fade-up" data-aos-duration="1000">
+        <div class="main-container">
+            <div class="content">
+                <h2>Experience</h2>
+                <div class="experience-list">
+                    <div class="experience-item" data-aos="fade-right" data-aos-duration="1000">
+                        <h3>Python Development Intern – Octanet</h3>
+                        <p class="date">May 1, 2025 – July 1, 2025 <span class="italic">(Remote)</span></p>
+                        <p>Developed automation tools and reusable Python modules. Gained experience in agile methodology and Git-based collaboration on remote projects.</p>
+                    </div>
+                    <div class="experience-item" data-aos="fade-left" data-aos-duration="1000">
+                        <h3>SSOC Contributor – Smart Summer of Code</h3>
+                        <p class="date">December 2022</p>
+                        <p>Contributed to real-world open-source projects under SSOC. Improved problem-solving and collaboration skills through hands-on development experience.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" data-aos="fade-up" data-aos-duration="1000">
+        <div class="main-container">
+            <div class="content">
+                <h2>Technical Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3><i class="fa-solid fa-code"></i> Programming Languages</h3>
+                        <div class="skill-item-progress">
+                            <p>Python</p><div class="progress-bar"><div class="progress-fill" data-progress="90%"></div></div>
+                        </div>
+                        <div class="skill-item-progress">
+                            <p>C++</p><div class="progress-bar"><div class="progress-fill" data-progress="85%"></div></div>
+                        </div>
+                        <div class="skill-item-progress">
+                            <p>SQL</p><div class="progress-bar"><div class="progress-fill" data-progress="80%"></div></div>
+                        </div>
+                         <div class="skill-item-progress">
+                            <p>Java</p><div class="progress-bar"><div class="progress-fill" data-progress="70%"></div></div>
+                        </div>
+                        <div class="skill-item-progress">
+                            <p>C</p><div class="progress-bar"><div class="progress-fill" data-progress="75%"></div></div>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3><i class="fa-solid fa-cogs"></i> Frameworks & Tools</h3>
+                        <div class="skill-item-progress">
+                            <p>TensorFlow</p><div class="progress-bar"><div class="progress-fill" data-progress="88%"></div></div>
+                        </div>
+                        <div class="skill-item-progress">
+                            <p>Keras</p><div class="progress-bar"><div class="progress-fill" data-progress="87%"></div></div>
+                        </div>
+                        <div class="skill-item-progress">
+                            <p>Flask</p><div class="progress-bar"><div class="progress-fill" data-progress="80%"></div></div>
+                        </div>
+                        <div class="skill-item-progress">
+                            <p>Streamlit</p><div class="progress-bar"><div class="progress-fill" data-progress="82%"></div></div>
+                        </div>
+                        <div class="skill-item-progress">
+                            <p>Power BI</p><div class="progress-bar"><div class="progress-fill" data-progress="75%"></div></div>
+                        </div>
+                        <div class="skill-item-progress">
+                            <p>Git</p><div class="progress-bar"><div class="progress-fill" data-progress="90%"></div></div>
+                        </div>
+                        <div class="skill-item-progress">
+                            <p>MySQL</p><div class="progress-bar"><div class="progress-fill" data-progress="85%"></div></div>
+                        </div>
+                        <div class="skill-item-progress">
+                            <p>PyTorch</p><div class="progress-bar"><div class="progress-fill" data-progress="78%"></div></div>
+                        </div>
+                        <div class="skill-item-progress">
+                            <p>Pygame</p><div class="progress-bar"><div class="progress-fill" data-progress="70%"></div></div>
+                        </div>
+                        <div class="skill-item-progress">
+                            <p>HTML/CSS</p><div class="progress-bar"><div class="progress-fill" data-progress="95%"></div></div>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3><i class="fa-solid fa-book"></i> Libraries</h3>
+                        <div class="skill-item-progress">
+                            <p>NumPy</p><div class="progress-bar"><div class="progress-fill" data-progress="95%"></div></div>
+                        </div>
+                        <div class="skill-item-progress">
+                            <p>Pandas</p><div class="progress-bar"><div class="progress-fill" data-progress="93%"></div></div>
+                        </div>
+                        <div class="skill-item-progress">
+                            <p>Matplotlib</p><div class="progress-bar"><div class="progress-fill" data-progress="88%"></div></div>
+                        </div>
+                        <div class="skill-item-progress">
+                            <p>Seaborn</p><div class="progress-bar"><div class="progress-fill" data-progress="87%"></div></div>
+                        </div>
+                        <div class="skill-item-progress">
+                            <p>Plotly</p><div class="progress-bar"><div class="progress-fill" data-progress="85%"></div></div>
+                        </div>
+                         <div class="skill-item-progress">
+                            <p>Jupyter Notebook</p><div class="progress-bar"><div class="progress-fill" data-progress="92%"></div></div>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                    <h3><i class="fa-solid fa-brain"></i> Core Concepts</h3>
+                    <div class="skill-item-progress">
+                        <p>Data Structures & Algorithms</p><div class="progress-bar"><div class="progress-fill" data-progress="90%"></div></div>
+                    </div>
+                    <div class="skill-item-progress">
+                        <p>Object-Oriented Programming</p><div class="progress-bar"><div class="progress-fill" data-progress="88%"></div></div>
+                    </div>
+                    <div class="skill-item-progress">
+                        <p>Machine Learning</p><div class="progress-bar"><div class="progress-fill" data-progress="92%"></div></div>
+                    </div>
+                    <div class="skill-item-progress">
+                        <p>Deep Learning</p><div class="progress-bar"><div class="progress-fill" data-progress="90%"></div></div>
+                    </div>
+                    <div class="skill-item-progress">
+                        <p>NLP</p><div class="progress-bar"><div class="progress-fill" data-progress="85%"></div></div>
+                    </div>
+                    <div class="skill-item-progress">
+                        <p>Operating Systems</p><div class="progress-bar"><div class="progress-fill" data-progress="80%"></div></div>
+                    </div>
+                    <div class="skill-item-progress">
+                        <p>Data Analysis</p><div class="progress-bar"><div class="progress-fill" data-progress="93%"></div></div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" data-aos="fade-up" data-aos-duration="1000">
+        <div class="main-container">
+            <div class="content">
+                <h2>Project Experience</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <h3>
+                            <i class="fa-solid fa-chart-line"></i>
+                            <a href="https://github.com/tanishq234/Stock-Price-Prediction" target="_blank" rel="noopener noreferrer">
+                                Stock Price Prediction
+                            </a>
+                        </h3>
+                        <ul>
+                            <li>Engineered LSTM and XGBoost models to forecast stock trends with 92% accuracy</li>
+                            <li>Developed a Streamlit dashboard for interactive user input and dynamic visualization</li>
+                            <li>Implemented advanced feature engineering and time series analysis techniques</li>
+                        </ul>
+                    </div>
+                    <div class="project-card">
+                        <h3>
+                            <i class="fa-solid fa-bug"></i>
+                            <a href="https://gdp-dashboard-hln3bfvsmyn.streamlit.app/" target="_blank" rel="noopener noreferrer">
+                                GDB Debugging Dashboard
+                            </a>
+                        </h3>
+                        <ul>
+                            <li>Built an intuitive dashboard using Matplotlib and Plotly to visualize debugging steps</li>
+                            <li>Reduced developers' troubleshooting time by 30% through improved data insights</li>
+                            <li>Created comprehensive debugging workflow visualization tools</li>
+                        </ul>
+                    </div>
+                    <div class="project-card">
+                        <h3>
+                            <i class="fa-solid fa-car"></i>
+                            <a href="https://github.com/tanishq234/SELF_DRIVING_CAR" target="_blank" rel="noopener noreferrer">
+                                Self-Driving Car Simulator
+                            </a>
+                        </h3>
+                        <ul>
+                            <li>Programmed an agent with Deep Q-Learning using OpenAI Gym and fine-tuned reward mechanics</li>
+                            <li>Boosted model accuracy and performance in virtual driving simulations</li>
+                            <li>Implemented reinforcement learning algorithms for autonomous navigation</li>
+                        </ul>
+                    </div>
+                    <div class="project-card">
+                        <h3><i class="fa-solid fa-comments"></i>
+                            <a href="https://amazon-sentimental-analysis-3.onrender.com" target="_blank" rel="noopener noreferrer">
+                                Amazon Sentiment Analysis
+                            </a>
+                        </h3>
+                        <ul>
+                            <li>Built a sentiment classifier using Logistic Regression and TF-IDF on Amazon reviews</li>
+                            <li>Preprocessed text data using NLTK; achieved high model interpretability and performance</li>
+                            <li>Deployed as a Flask web application with interactive UI for real-time sentiment prediction</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="education" data-aos="fade-up" data-aos-duration="1000">
+        <div class="main-container">
+            <div class="content">
+                <h2>Education</h2>
+                <div class="education-timeline">
+                    <div class="education-item">
+                        <h3>B.Tech - Computer Science and Engineering</h3>
+                        <p class="institution">Jaypee University of Engineering and Technology, Guna</p>
+                        <p class="year">2022 - Present</p>
+                        <p>Specializing in Data Science with focus on Machine Learning and AI technologies</p>
+                    </div>
+                    <div class="education-item">
+                        <h3>Class XII</h3>
+                        <p class="institution">Ramakrishna Mission School, Gwalior</p>
+                        <p class="year">2022</p>
+                    </div>
+                    <div class="education-item">
+                        <h3>Class X - CBSE</h3>
+                        <p class="institution">The Woodstock School, Gwalior</p>
+                        <p class="year">2020</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="certifications" data-aos="fade-up" data-aos-duration="1000">
+        <div class="main-container">
+            <div class="content">
+                <h2>Certifications & Achievements</h2>
+                <div class="cert-list">
+                    <div class="cert-item">
+                        <div class="cert-icon">🏆</div>
+                        <div class="cert-text">Smart India Hackathon 2023 - Software Edition Participant</div>
+                    </div>
+                    <div class="cert-item">
+                        <div class="cert-icon">🐍</div>
+                        <div class="cert-text">100 Days of Code: Python Bootcamp, Udemy (2025)</div>
+                    </div>
+                    <div class="cert-item">
+                        <div class="cert-icon">📊</div>
+                        <div class="cert-text">DSA in Python, Infosys Springboard (2023)</div>
+                    </div>
+                </div>
+
+                <div class="additional-experience">
+                    <h3>Additional Experience</h3>
+                    <div class="experience-item">
+                        <h3><i class="fa-solid fa-code"></i> LeetCode Problem Solving</h3>
+                        <p>Solved 100+ problems covering arrays, trees, graphs, dynamic programming, and backtracking. Demonstrates strong algorithmic thinking and problem-solving capabilities.</p>
+                    </div>
+                    <div class="experience-item">
+                        <h3><i class="fa-solid fa-users"></i> Extracurricular Activities</h3>
+                        <p>Avid sports enthusiast participating in Cricket, Football, and Badminton. Developed leadership, discipline, and collaboration skills through competitive sports participation.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="resume" data-aos="fade-up" data-aos-duration="1000">
+        <div class="main-container">
+            <div class="content">
+                <h2>Resume</h2>
+                <div class="resume-download">
+                    <a href="resume.pdf" target="_blank" class="button-link"> <button>View Resume</button>
+                    </a>
+                    &nbsp;
+                    <a href="resume.pdf" download class="button-link"> <button>Download CV</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" data-aos="fade-up" data-aos-duration="1000">
+    <div class="main-container">
+        <div class="content">
+            <h2>Contact Me</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fa-solid fa-envelope"></i>
+                    <h3>Email</h3>
+                    <p><a href="mailto:tanishq.saxena26@gmail.com">tanishq.saxena26@gmail.com</a></p>
+                </div>
+                <div class="contact-item">
+                    <i class="fa-solid fa-phone"></i>
+                    <h3>Phone</h3>
+                    <p>+91 6264616658</p>
+                </div>
+                <div class="contact-item">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <h3>Location</h3>
+                    <p>Gwalior, Madhya Pradesh, India</p>
+                </div>
+                <div class="contact-item">
+                    <i class="fa-brands fa-linkedin"></i>
+                    <h3>LinkedIn</h3>
+                    <p><a href="https://www.linkedin.com/in/tanishq-saxena-6b16ab252" target="_blank">linkedin.com/in/tanishq-saxena-6b16ab252</a></p>
+                </div>
+                <div class="contact-item">
+                    <i class="fa-brands fa-github"></i>
+                    <h3>GitHub</h3>
+                    <p><a href="https://github.com/tanishq234" target="_blank">github.com/tanishq234</a></p>
+                </div>
+                <div class="contact-item">
+                    <i class="fa-solid fa-code"></i>
+                    <h3>LeetCode</h3>
+                    <p><a href="https://leetcode.com/u/Tanishq45" target="_blank">leetcode.com/u/Tanishq45</a></p>
+                </div>
+            </div>
+
+            <form action="mailto:tanishq.saxena26@gmail.com?subject=Portfolio Contact&body=Name: %0D%0AEmail: %0D%0AMobile Number: %0D%0AMessage:" method="post" enctype="text/plain" class="contact-form">
+                <div class="input-box">
+                    <input type="text" name="full_name" placeholder="Full Name" value="Tanishq Saxena">
+                    <input type="email" name="email_address" placeholder="Email Address" value="tanishq.saxena26@gmail.com">
+                </div>
+                <div class="input-box">
+                    <input type="number" name="mobile_number" placeholder="Mobile Number" value="+91 6264616658">
+                    <input type="text" name="email_subject" placeholder="Email Subject (Optional)">
+                </div>
+                <textarea name="your_message" id="message" cols="30" rows="10" placeholder="Your Message"></textarea>
+                <input type="submit" value="Send Message" class="btn">
+            </form>
+
+        </div>
+    </div>
+</section>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="script.js"></script> </body>
+</html>
